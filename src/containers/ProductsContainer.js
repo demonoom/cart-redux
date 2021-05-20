@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import Products from "../components/Products";
+import {getAllProducts, handleAddToCart} from '../actions'
 
 function mapStateToProps(state) {
     return {
@@ -7,17 +8,23 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
+/*function mapDispatchToProps(dispatch) {
     return {
-        getAllProducts() {
+        getProductsData() {
             //发起请求
             //拿到数据，调用 dispatch
-            dispatch({
+            /!*dispatch({
                 type: 'RECIVE_PRODUCTS',
                 products: ['a', 'b', 'c']
-            })
+            })*!/
+            dispatch(getAllProducts())
         }
     }
+}*/
+
+const mapDispatchToProps = {
+    getAllProducts,
+    handleAddToCart
 }
 
 const ProductsContainer = connect(
