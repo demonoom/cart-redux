@@ -6,7 +6,7 @@ const Products = (props) => {
 
     useEffect(() => {
         setTimeout(() => getAllProducts(), 1000)
-    })
+    },[getAllProducts])
 
     return (
         <div>
